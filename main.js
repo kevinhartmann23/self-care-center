@@ -26,9 +26,12 @@ function displayMessage() {
   event.preventDefault();
   messageDisplay.classList.remove("hidden");
   image.classList.add("hidden");
-  if(selectMantra.checked === true){
+  if(selectMantra.checked === true) {
     return chooseMantra();
-  } else {
+  } else if (selectAffirmation.checked === true) {
     return chooseAffirmation();
+  } else {
+    messageDisplay.classList.add("hidden");
+    image.classList.remove("hidden");
   }
 };

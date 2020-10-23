@@ -57,7 +57,7 @@ body {
   font-size: 120%
 }
 
-#get-message {
+button {
   background-color: #134d71;
   color: #ffffff;
   font-size: 120%;
@@ -99,4 +99,10 @@ p  {
   margin: 35px;
   width: 120px;
   height: 75px;
+}
+
+#button-box {
+  background: none;
+  height: none;
+  padding: 0px;
 }

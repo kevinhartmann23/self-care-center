@@ -3,9 +3,10 @@ var selectAffirmation = document.querySelector("#affirmation-button");
 var submitButton = document.querySelector("#get-message");
 var messageDisplay = document.querySelector('p');
 var image = document.querySelector("#lil-human");
+var clearButton = document.querySelector("#clear-message");
 
 submitButton.addEventListener('click', displayMessage);
-
+clearButton.addEventListener('click', clearMessage);
 
 
 function getRandomIndex(array) {
@@ -27,11 +28,18 @@ function displayMessage() {
   messageDisplay.classList.remove("hidden");
   image.classList.add("hidden");
   if(selectMantra.checked === true) {
-    return chooseMantra();
+      return chooseMantra();
   } else if (selectAffirmation.checked === true) {
-    return chooseAffirmation();
+      return chooseAffirmation();
   } else {
-    messageDisplay.classList.add("hidden");
-    image.classList.remove("hidden");
+      messageDisplay.classList.add("hidden");
+      image.classList.remove("hidden");
   }
+};
+
+function clearMessage() {
+  messageDisplay.classList.add("hidden");
+  image.classList.remove("hidden");
+  selectMantra.checked = false;
+  selectAffirmation.checked = false;
 };

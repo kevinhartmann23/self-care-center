@@ -33,5 +33,10 @@ var mantras = [
   "The only constant is change.",
   "Onward and upward.",
   "I am the sky, the rest is weather.",
-  "Life's a garden, dig it!"
+  "Life's a garden, dig it!",
+  "I am grateful for all that is unfolding in my life and all that is yet to come.",
+  "I am fulfilled. I am fearless",
+  "Less is more.",
+  "To being, begin.",
+  "Slow down. Calm down. Don't worry. Don't hurry. Trust the process."
 ];

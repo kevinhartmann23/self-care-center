@@ -15,6 +15,7 @@ var clearButton = document.querySelector("#clear-message");
 var favoriteButton = document.querySelector(".fav-button");
 var showFavoritesButton = document.querySelector(".show-favorites");
 var backToMain = document.querySelector(".return-home");
+var unfavoriteMessage = document.querySelector(".unfav-button");
 
 //Event Listeners
 submitButton.addEventListener('click', displayMessage);
@@ -22,6 +23,7 @@ clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 showFavoritesButton.addEventListener('click', displayFavorites);
 backToMain.addEventListener('click', displayMainPage);
+unfavoriteMessage.addEventListener('click', removeFromFavorites);
 
 //Global Variables
 var favoritedMessages = [];
@@ -97,8 +99,12 @@ function createGrid () {
     favMessageGrid.innerHTML +=
       `<article class="favorited-message" id="mini-display">
         <p class="text" id="mini-message">${favoritedMessages[i]}</p>
-        <button class= "fav-button" id="favorite-message">&#9825;</button>
       </article>`
-
   }
 };
+
+function removeFromFavorites() {
+  for(var i = 0; i < favoritedMessages.length; i++) {
+      favoritedMessages.splice(i, 1);
+    }
+  };

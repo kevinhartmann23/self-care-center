@@ -20,8 +20,8 @@ var backToMain = document.querySelector(".return-home");
 submitButton.addEventListener('click', displayMessage);
 clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
-//showFavoritesButton.addEventListener('click', displayFavorites);
-//backToMain.addEventListener('click', displayMainPage);
+showFavoritesButton.addEventListener('click', displayFavorites);
+backToMain.addEventListener('click', displayMainPage);
 
 //Global Variables
 var favoritedMessages = [];
@@ -79,26 +79,26 @@ function addToFavorites() {
   createGrid();
 };
 
-// function displayFavorites() {
-//   event.preventDefault();
-//   favoritesPage.classList.remove("hidden");
-//   mainPage.classList.add("hidden");
-// };
-//
-// function displayMainPage() {
-//   mainPage.classList.remove("hidden");
-//   favoritesPage.classList.add("hidden");
-//   clearMessage();
-// };
+function displayFavorites() {
+  event.preventDefault();
+  favoritesPage.classList.remove("hidden");
+  mainPage.classList.add("hidden");
+};
+
+function displayMainPage() {
+  mainPage.classList.remove("hidden");
+  favoritesPage.classList.add("hidden");
+  clearMessage();
+};
 
 function createGrid () {
   favMessageGrid.innerHTML = "";
   for (var i = 0; i < favoritedMessages.length; i++) {
     favMessageGrid.innerHTML +=
       `<article class="favorited-message" id="mini-display">
-        <button class= "fav-button" id="favorite-message">&#9825;</button>
         <p class="text" id="mini-message">${favoritedMessages[i]}</p>
-      </article>
-      `
+        <button class= "fav-button" id="favorite-message">&#9825;</button>
+      </article>`
+
   }
 };

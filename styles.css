@@ -115,12 +115,34 @@ p  {
 }
 
 .favorites-page {
-  padding: 40px;
+  padding: 10px;
 }
 
 .fav-message-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-gap:15px;
   padding: 15px;
+}
+
+#mini-display {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #f7e4bf;
+  padding: 5px;
+  width: 400px;
+  height: 75px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#mini-message {
+  font-size: 12px;
+  color: #78a7c6;
+  padding: 5px;
+}
+
+#fav-button {
+  flex: auto;
+  color: white;
 }

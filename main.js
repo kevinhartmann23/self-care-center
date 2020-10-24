@@ -28,8 +28,10 @@ function displayMessage() {
   messageDisplay.classList.remove("hidden");
   image.classList.add("hidden");
   if(selectMantra.checked === true) {
+      clearButton.classList.remove("hidden");
       return chooseMantra();
   } else if (selectAffirmation.checked === true) {
+      clearButton.classList.remove("hidden");
       return chooseAffirmation();
   } else {
       messageDisplay.classList.add("hidden");
@@ -40,6 +42,7 @@ function displayMessage() {
 function clearMessage() {
   messageDisplay.classList.add("hidden");
   image.classList.remove("hidden");
+  clearButton.classList.add("hidden");
   selectMantra.checked = false;
   selectAffirmation.checked = false;
 };

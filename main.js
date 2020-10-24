@@ -1,6 +1,7 @@
 //Page Organization
 var mainPage = document.querySelector(".main-page")
 var favoritesPage = document.querySelector(".favorites-page");
+var favMessageGrid = document.querySelector(".fav-message-grid");
 
 //Text & Image Organization
 var messageDisplay = document.querySelector('p');
@@ -19,8 +20,8 @@ var backToMain = document.querySelector(".return-home");
 submitButton.addEventListener('click', displayMessage);
 clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
-showFavoritesButton.addEventListener('click', displayFavorites);
-backToMain.addEventListener('click', displayMainPage);
+//showFavoritesButton.addEventListener('click', displayFavorites);
+//backToMain.addEventListener('click', displayMainPage);
 
 //Global Variables
 var favoritedMessages = [];
@@ -75,16 +76,29 @@ function addToFavorites() {
   if(favoritedMessages.length >= 1) {
     showFavoritesButton.classList.remove("hidden");
   }
+  createGrid();
 };
 
-function displayFavorites() {
-  event.preventDefault();
-  favoritesPage.classList.remove("hidden");
-  mainPage.classList.add("hidden");
-};
+// function displayFavorites() {
+//   event.preventDefault();
+//   favoritesPage.classList.remove("hidden");
+//   mainPage.classList.add("hidden");
+// };
+//
+// function displayMainPage() {
+//   mainPage.classList.remove("hidden");
+//   favoritesPage.classList.add("hidden");
+//   clearMessage();
+// };
 
-function displayMainPage() {
-  mainPage.classList.remove("hidden");
-  favoritesPage.classList.add("hidden");
-  clearMessage();
+function createGrid () {
+  favMessageGrid.innerHTML = "";
+  for (var i = 0; i < favoritedMessages.length; i++) {
+    favMessageGrid.innerHTML +=
+      `<article class="favorited-message" id="mini-display">
+        <button class= "fav-button" id="favorite-message">&#9825;</button>
+        <p class="text" id="mini-message">${favoritedMessages[i]}</p>
+      </article>
+      `
+  }
 };

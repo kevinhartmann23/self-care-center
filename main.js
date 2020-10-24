@@ -1,21 +1,32 @@
+//Page Organization
+var mainPage = document.querySelector(".main-page")
+var favoritesPage = document.querySelector(".favorites-page");
+
+//Text & Image Organization
+var messageDisplay = document.querySelector('p');
+var image = document.querySelector("#lil-human");
+
+//Button Organization
 var selectMantra = document.querySelector("#mantra-button");
 var selectAffirmation = document.querySelector("#affirmation-button");
 var submitButton = document.querySelector("#get-message");
-var messageDisplay = document.querySelector('p');
-var image = document.querySelector("#lil-human");
 var clearButton = document.querySelector("#clear-message");
 var favoriteButton = document.querySelector(".fav-button");
-var showFavoritesPage = document.querySelector(".show-favorites");
+var showFavoritesButton = document.querySelector(".show-favorites");
+var backToMain = document.querySelector(".return-home");
 
+//Event Listeners
 submitButton.addEventListener('click', displayMessage);
 clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
-//showFavoritesPage.addEventListener('click', displayFavorites);
+showFavoritesButton.addEventListener('click', displayFavorites);
+backToMain.addEventListener('click', displayMainPage);
 
-
+//Global Variables
 var favoritedMessages = [];
 var currentMessage;
 
+//Functions & Event Handlers
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
@@ -61,4 +72,19 @@ function addToFavorites() {
   if(!favoritedMessages.includes(currentMessage)){
     favoritedMessages.push(currentMessage);
   }
+  if(favoritedMessages.length >= 1) {
+    showFavoritesButton.classList.remove("hidden");
+  }
+};
+
+function displayFavorites() {
+  event.preventDefault();
+  favoritesPage.classList.remove("hidden");
+  mainPage.classList.add("hidden");
+};
+
+function displayMainPage() {
+  mainPage.classList.remove("hidden");
+  favoritesPage.classList.add("hidden");
+  clearMessage();
 };

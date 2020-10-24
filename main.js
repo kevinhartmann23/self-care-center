@@ -1,6 +1,7 @@
 //Page Organization
 var mainPage = document.querySelector(".main-page")
 var favoritesPage = document.querySelector(".favorites-page");
+var favMessageGrid = document.querySelector(".fav-message-grid");
 
 //Text & Image Organization
 var messageDisplay = document.querySelector('p');
@@ -14,6 +15,7 @@ var clearButton = document.querySelector("#clear-message");
 var favoriteButton = document.querySelector(".fav-button");
 var showFavoritesButton = document.querySelector(".show-favorites");
 var backToMain = document.querySelector(".return-home");
+var unfavoriteMessage = document.querySelector(".unfav-button");
 
 //Event Listeners
 submitButton.addEventListener('click', displayMessage);
@@ -21,6 +23,7 @@ clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 showFavoritesButton.addEventListener('click', displayFavorites);
 backToMain.addEventListener('click', displayMainPage);
+unfavoriteMessage.addEventListener('click', removeFromFavorites);
 
 //Global Variables
 var favoritedMessages = [];
@@ -75,6 +78,7 @@ function addToFavorites() {
   if(favoritedMessages.length >= 1) {
     showFavoritesButton.classList.remove("hidden");
   }
+  createGrid();
 };
 
 function displayFavorites() {
@@ -88,3 +92,19 @@ function displayMainPage() {
   favoritesPage.classList.add("hidden");
   clearMessage();
 };
+
+function createGrid () {
+  favMessageGrid.innerHTML = "";
+  for (var i = 0; i < favoritedMessages.length; i++) {
+    favMessageGrid.innerHTML +=
+      `<article class="favorited-message" id="mini-display">
+        <p class="text" id="mini-message">${favoritedMessages[i]}</p>
+      </article>`
+  }
+};
+
+function removeFromFavorites() {
+  for(var i = 0; i < favoritedMessages.length; i++) {
+      favoritedMessages.splice(i, 1);
+    }
+  };

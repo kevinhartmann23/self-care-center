@@ -7,22 +7,32 @@
     <link rel="icon" href="assets/favicon.ico">
   </head>
   <body>
-    <h1 class="text" id="page-title">&#10024; Self Care Center &#10024;</h1>
-    <h3 class="text" id="prompt">Which type of message?</h3>
-    <form class="box" id="options">
-      <input type="radio" id="affirmation-button" name="choice" value="affirmation">
-      <label for="affirmation" id="affirmation">affirmation</label>
-      <input type="radio" id="mantra-button" name="choice" value="mantra">
-      <label for="mantra" id="mantra">mantra</label>
-      </br>
-      <button class="submit-button" id="get-message">Recieve Message</button>
-    </form>
-    <section class="box" id="message-display">
-      <p class="display-message hidden" id="words-of-wisdom">TEST</p>
-      <img id="lil-human" src="assets/meditate.svg" alt="meditating human icon"/>
+    <section class="main-page">
+      <h1 class="text" id="page-title">&#10024; Self Care Center &#10024;</h1>
+      <h3 class="text" id="prompt">Which type of message?</h3>
+      <form class="box" id="options">
+        <input type="radio" id="affirmation-button" name="choice" value="affirmation">
+        <label for="affirmation" id="affirmation">affirmation</label>
+        <input type="radio" id="mantra-button" name="choice" value="mantra">
+        <label for="mantra" id="mantra">mantra</label>
+        </br>
+        <button class="submit-button" id="get-message">Recieve Message</button>
+      </form>
+      <article class="box" id="message-display">
+        <p class="display-message hidden" id="words-of-wisdom">TEST</p>
+        <button class="fav-button hidden" id="favorite-message">&#9825;</button>
+        <button class="clear-button hidden" id="clear-message">Clear Message</button>
+        <img id="lil-human" src="assets/meditate.svg" alt="meditating human icon"/>
+      </article>
+      <article class="box" id="button-box">
+        <button class="show-favorites hidden" id="show-favorites">Show Favorites</button>
+      </article>
     </section>
-    <section class="box" id="button-box">
-      <button class="clear-button hidden" id="clear-message">Clear Message</button>
+    <section class="favorites-page hidden">
+        <h1 class="text">&#10024; Self Care Center &#10024;</h1>
+        <h3 class="text">Favorited Messages</h2>
+        <article class="fav-message-grid"></article>
+        <button class="return-home" id="back-to-main">Take me back</button>
     </section>
     <script type="text/javascript" src="messages.js"></script>
     <script type="text/javascript" src="main.js"></script>

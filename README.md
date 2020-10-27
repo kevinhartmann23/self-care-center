@@ -4,9 +4,10 @@ How can I care for myself? One way is with affirmations and mantras!
 Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
 Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+**I decided to go with error handling and favoriting messages. You will see that everything on the page runs fairly smooth and completes most of the set tasks for the CYOA. As for the MVP, I am proud to say I was able to get through that with flying colors!**
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+### Deployed Site
+https://kevinhartmann23.github.io/self-care-center/
 
 ## Learning Goals
 
@@ -15,32 +16,33 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 - Understand how to listen to and respond to user events
 - Individualize your programming skill set
 
-## Expectations
-- In order to get a good read on your progress during this inning, we'd like to see you complete the MVP (iteration 1) and at least one CYOA feature. If you'd like to complete more CYOA features after that, please do!
-- As for feedback: No news is good news. If we have concerns, we'll let you know so that you can make adjustments before your next project
-
-## Setup
-
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
-
 ## Workflow
-Make sure you're utilizing git best practices (branches) and commiting frequently. 
+I was able to utilizes branches to create a good git workflow, I also used the projects feature on github to help myself remain organized!
 
 ### Day One Deliverable
-- Read the spec sheet closely. 
-- Send the link to your forked repo to your Project Manager
 
 Reflect on the the following questions in a DM to your Project Manager:
+
 - What are my strengths as a developer? With which Mod 1 concepts do I feel comfortable?
+_My strengths as a developer would be organization, task oriented, and calm. As for code, I feel my most comfortable with HTML/CSS and the javascript basics. After looking over the specs, there is nothing that I am ready that makes me uncomfortable or nervous!_
+
 - In what areas could I grow? With which Mod 1 concepts do I struggle?
+*I could spend more time practicing psuedocode. I tend to write my psudeocode out with code inside of it, this tends to get me off track or confused. Once I get to the area I've psuedocoded I am more focused on what I wrote down rather than working through code organically. I would like to be able to hone in my terms of art, as well as how to work through the struggle. Typically, I get stuck and confuse myself more. I would like to be able to slow down and simplify my process!*
+
 - Which CYOA features align with my strengths?
+*CSS animation & login page*
+
 - Which CYOA features align with my areas of growth?
+*favorites, all messages interface,  error handling, and responsive design*
+
 - Which CYOA features align with what I enjoy about programming?
+*responsive design and animation!*
+
 - Which CYOA features make the most sense for this application?
+*Login Page, never sees a repeated message, and favorites.*
+
 - Which CYOA feature(s) will I aim for?
+*I will most likely aim for login page and favorites*
 
 ### Iteration 0: Build Out Comp
 - Images are below
@@ -61,9 +63,7 @@ Reflect on the the following questions in a DM to your Project Manager:
 
 ### Choose your own Adventure
 
-In the interest of giving you opportunities to individualize the skills you build, this project's main goal is to provide various different paths you can take. Along these different paths you will encounter different problems and solve them in different ways. As you make choices about which features to add, you should consider which features align with your strengths, which features would challenge you to grow, and which features you'd find to be useful in this application. Choose one or more of the following features to add. Some of them build on others, so be sure to read them all before choosing. 
-
-_NOTE: You should absolutely not be working on this unless your UI is solid and you are 100% sure that your MVP is fully functional and bug free._
+I decided to tackled a few, I feel that with JavaScript I struggle towards the end. I wanted to do a few CYOA that were more javascript heavy.
 
 #### Error handling and clear button
 - User should not be able to click the "Receive Message" button unless they have selected a message option.
@@ -73,16 +73,6 @@ _NOTE: You should absolutely not be working on this unless your UI is solid and 
 - If you've added other buttons or inputs, be sure to add some error handling for them as well.
 
 _Note: You can disable these buttons, hide them, or display a message to the user for error handling. The choice is yours!_
-
-#### User can add their own message
-- Add an "Add Message" button in a logical spot.
-- When the user clicks "Add Message" a form will appear in the message box. The form should contain two inputs - one to specify which type of message is being added, and another to add the text of the message itself. The form should also contain a "Submit" button.
-- If the user doesn't specify the type of message, they should get an error and be unable to submit their message until the type is specified.
-- When the user clicks the "Submit" button and that message will be added to the appropriate list of messages.
-- When a new message is added, that message should automatically be displayed in the message box, instead of the meditation icon.
-- As you add these new elements to the page, be sure to match the style of existing elements.
-
-_NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature_
 
 #### User can favorite a message
 
@@ -96,103 +86,9 @@ _NOTE: None of this needs to persist on page refresh, unless you also complete t
 
 _NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature_
 
-#### User can delete a message
-- Add the ability to delete a messge (ie: when a message shows up, show a button that says "I don't like this messge" (or something similar), and remove it from the list so that it will not show up any more. Make sure to alert the user in some way that the message has been removed. 
-
-_NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature_
-
-#### User never sees a repeated message
-- Use JavaScript to ensure that the user never sees a repeated message until they've seen them all.
-- After they've seen them all they should be notified that they will now start seeing repeat messages.
-
-#### All Messages interface
-- Add a "View All Messages" button.
-- When that button is clicked, the user is taken to a new pages that displays all messages, sorted by message type.
-- On this page, user should have the ability to add/edit/delete messages.
-
-#### CSS Animations
-- Add a loading animation when a user clicks the "Receive Message" button to simulate searching for a message. Hint - You will need to use CSS Keyframes, and a Javascript timeout function for this.
-- Make your buttons grow in size or change color when the user hovers over them, enticing them to click the dang thing.
-- When the message appears, the text should fade in, from white to black to deliver the message in a calming way.
-- Have the background change depending on if a user has selected an affirmation or mantra. Choose a calming secondary gradient for each type of message Remember your user experience and animate this in gradually! 
-
-#### Login Page
-- Refactor your application so that the user lands on a "Login" page
-- The login page should match the style of the application.
-- The login page should contain an input for a user to enter their name, and a button to submit.
-- After the user clicks the submit button, they should be taken to the main application page, and see a personalized greeting that displays their name and some sort of welcome message.
-- The welcome message and name should appear in a logical place of your choosing.
-
-#### Responsive Design
-- Do some research and determine how to make your app respond to the user's screen size.
-- Layout and spacing should adapt to mobile, tablet, desktop and extra large screens.
-
-#### Local Storage 
-- Only do this if you've added the "Favorite a Message" functionality.
-- Do some research to utilize Local Storage, so that the user's favorite messages will persist, even if they reload the page.
-
 #### Design your own feature
-- Have an idea of something you'd like to add to the app? Go for it! Just be sure to run the idea by your instructors first!
+- Style the title! I added a Fav-Icon and matched the title to match the page styling!
 
-<hr/>
+#### Struggles
 
-### Message Lists (Feel free to use your own instead!)
-
-#### Affirmations
-
-I forgive myself and set myself free.
-
-I believe I can be all that I want to be.
-
-I am in the process of becoming the best version of myself.
-
-I have the freedom & power to create the life I desire.
-
-I choose to be kind to myself and love myself unconditionally.
-
-My possibilities are endless.
-
-I am worthy of my dreams.
-
-I am enough. 
-
-I deserve to be healthy and feel good.
-
-I am full of energy and vitality and my mind is calm and peaceful.
-
-Every day I am getting healthier and stronger.
-
-I honor my body by trusting the signals that it sends me.
-
-I manifest perfect health by making smart choices.
-
-#### Mantras
-Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.
-
-Don’t let yesterday take up too much of today.
-
-Every day is a second chance.
-
-Tell the truth and love everyone. 
-
-I am free from sadness.
-
-I am enough.
-
-In the beginning it is you, in the middle it is you and in the end it is you.
-
-I love myself.
-
-I am present now.
-
-Inhale the future, exhale the past.
-
-This too shall pass.
-
-Yesterday is not today.
-
-The only constant is change.
-
-Onward and upward.
-
-I am the sky, the rest is weather.
+I found myself struggling in the same place I did in our paired project, finishing the last few steps. On the favorites button CYOA, I was able to complete everything. The only problem is, the remove from favorites function will not remove multiple without having to go back to the main page and back into favorites page. I spent a lot of time tinkering here, and I figure it has to do with some refactoring and decoupling my data (these are two huge areas of improvement!).

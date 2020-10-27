@@ -149,7 +149,7 @@ p  {
   margin: auto;
 }
 
-#unfavorite-message {
-  flex-direction: row;
-  width: 30px:
+.unfav-button {
+  margin-top: 0px;
+  width: 30px;
 }

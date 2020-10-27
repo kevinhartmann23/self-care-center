@@ -15,7 +15,7 @@ var clearButton = document.querySelector("#clear-message");
 var favoriteButton = document.querySelector(".fav-button");
 var showFavoritesButton = document.querySelector(".show-favorites");
 var backToMain = document.querySelector(".return-home");
-var unfavoriteMessage = document.querySelector(".unfav-button");
+var unfavoriteMessage = document.querySelectorAll(".unfav-button");
 
 //Event Listeners
 submitButton.addEventListener('click', displayMessage);
@@ -82,10 +82,9 @@ function addToFavorites() {
 };
 
 function displayFavorites() {
-  // event.preventDefault();
   favoritesPage.classList.remove("hidden");
   mainPage.classList.add("hidden");
-  removeFromFavorites();
+  interactWithFavorites();
 };
 
 function displayMainPage() {
@@ -97,22 +96,25 @@ function displayMainPage() {
 function createGrid () {
   favMessageGrid.innerHTML = "";
   for (var i = 0; i < favoritedMessages.length; i++) {
+    var buttonID = i;
     favMessageGrid.innerHTML +=
       `<article class="favorited-message" id="mini-display">
         <p class="text" id="mini-message">${favoritedMessages[i]}</p>
-        <button class="unfav-button" id="unfavorite-message">&#9825;</button>
+        <button class="unfav-button" id="${buttonID}">&#128148;</button>
       </article>`
   }
-  unfavoriteMessage = document.querySelector(".unfav-button");
-  unfavoriteMessage.addEventListener('click', removeFromFavorites);
 };
 
+function interactWithFavorites() {
+  unfavoriteMessage = document.querySelectorAll(".unfav-button");
+  for (var i = 0; i < unfavoriteMessage.length; i++) {
+    unfavoriteMessage[i].addEventListener('click', removeFromFavorites);
+  }
+}
+
 function removeFromFavorites() {
-  for(var i = 0; i < favoritedMessages.length; i++) {
-      if(favoritedMessages[i] == unfavoriteMessage.target) {
-        favoritedMessages.splice(i, 1);
-      }
-      //nothing happens? need to research more on buttons and removing
-      //if mini display
-    }
-  };
+  unfavoriteMessage = document.querySelectorAll(".unfav-button");
+  unfavoriteMessage = event.target.id
+  favoritedMessages.splice(unfavoriteMessage, 1);
+  createGrid();
+};

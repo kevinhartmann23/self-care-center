@@ -23,7 +23,6 @@ clearButton.addEventListener('click', clearMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 showFavoritesButton.addEventListener('click', displayFavorites);
 backToMain.addEventListener('click', displayMainPage);
-// unfavoriteMessage.addEventListener('click', removeFromFavorites);
 
 //Global Variables
 var favoritedMessages = [];
@@ -82,9 +81,9 @@ function addToFavorites() {
 };
 
 function displayFavorites() {
+  interactWithFavorites();
   favoritesPage.classList.remove("hidden");
   mainPage.classList.add("hidden");
-  interactWithFavorites();
 };
 
 function displayMainPage() {
@@ -107,14 +106,12 @@ function createGrid () {
 
 function interactWithFavorites() {
   unfavoriteMessage = document.querySelectorAll(".unfav-button");
-  for (var i = 0; i < unfavoriteMessage.length; i++) {
+  for (var i = 0; i < unfavoriteMessage.length; i= i+1) {
     unfavoriteMessage[i].addEventListener('click', removeFromFavorites);
   }
 }
 
 function removeFromFavorites() {
-  unfavoriteMessage = document.querySelectorAll(".unfav-button");
-  unfavoriteMessage = event.target.id
-  favoritedMessages.splice(unfavoriteMessage, 1);
+  favoritedMessages.splice(unfavoriteMessage.id, 1)
   createGrid();
 };
